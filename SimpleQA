@@ -1,0 +1,73 @@
+
+//  Question 1 - Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
+//  reverse the number and compare it with the input.
+//	Solution - Reverse the integer: sum = (sum * 10) + (number % 10), run this in a loop to reverse. 
+//			   Compare reverse with input. if equal, palindrome else, not.
+
+
+//  Question 2 - Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
+//  Given a roman numeral, convert it to an integer. Input is guaranteed to be within the range of 1 to 3999.
+//	Solution - In a loop starting from character at position 1 of the string: if current is lesser than or equal to previous, add previous to sum.
+//			   Else, if current is greater than previous, subtract previous from sum. 
+//			   Outside the loop, add the last character's value to the sum and return sum.
+
+//  Question 3 - Find the total number of prime numbers within a given value "n"
+//		Solution 1: Nlog(log(N)) Time complexity - Use sieve of Eratosthenes
+//		1) Create a boolean array of size "n". Populate it with true. 
+//		2) 2 for loops, outer for loop will loop till the square root of n. (i = 2; i*i < n; i++)
+//		3) inner for loop will loop from square of picked number (i*i) till n in increments of i. (j = i*i; j < n; j += i). Run the loop only if content of array[i] is true.
+//		4) in the inner loop, mark all array[j] as false. 
+//		5) loop and add increment counter if array[current] is true. Return the count value after the loop.
+
+//      Solution 2: 1) 2 functions, one to check if the number is prime and the other to call that method in a loop till n
+//      2) Check for values till 3. If n <= 1, return false. If n <= 3, return true;
+//      3) Check if the number is divisible by 2 or 3, if yes then return false.
+//      4) Run a for loop from i = 5 to square root of n in increments of 6
+//      5) Within the loop check if n is divisible by i or divisible by (i + 2), if yes then false.
+//      6) If the method does not return within for loop, then return true outside the loop.
+
+
+//	Question 4 - Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.
+//	Note: A leaf is a node with no children.
+//	recursive function - in-order traversal. Root comes first followed by left and then right. 
+
+//	Question 5 - Given two positive integers x and y, an integer is powerful if it is equal to x^i + y^j for some integers i >= 0 and j >= 0.
+//	Return a list of all powerful integers that have value less than or equal to bound.
+//	You may return the answer in any order.  In your answer, each value should occur at most once.
+
+//	Question 6 - Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
+
+//	Question 7 - find the longest palindromic subsequence's length
+//	Solution: 1) Create a 2D array NxN where N is the length of the string.
+//           2) In a for loop, assign the value 1 tot he principally diagonal elements of the table
+//           3) Move diagonally above the principally diagonal elements and check the following.
+//              To move diagonally, need 2 FOR loops. The outer FOR loop will give the no of elements to pick (i)
+//              The inner FOR loop will loop from 0 till "N - i(outer for loop)". So the loop does not go out of bound. (j)
+//           4) Head of the subsequence is j. An integer k = i+j to get the tail of the subsequence.
+//           5) If head and tail (charAt j and k) are equal, assign 2 + value at diagonally below/behind element (table[j+1][k-1] + 2).
+//           6) Else assign the max of element directly behind and below.
+//           7) The value at element table[0][length-1] is the value of the longest palindromic subsequence.
+
+//	Question 8 - Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+//				 You may assume that each input would have exactly one solution, and array contains only positive integers.
+//	Solution: Use Hash maps, 1 For loop, returning array and the target value.
+//           1) Run FOR loop for the entire array.
+//           2) Assign the value: Target - current element to a variable
+//           3) if the hash map does not contain the value "Target", add the current element to the hash map
+//              Since we have to return the indices of the element, assign element value to key and index to value of the hash map.
+//           4) else add current index and the value returned by hash map to the returning array.
+//           5) return the returning array.
+
+//	Question 9 - You are given two non-empty linked lists representing two non-negative integers.
+//		         The digits are stored in reverse order and each of their nodes contain a single digit.
+//        		 Add the two numbers and return it as a linked list.
+//		         You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+
+//	Question 10 - Given two strings text1 and text2, return the length of their longest common subsequence.
+//	A subsequence of a string is a new string generated from the original string with some characters(can be none) deleted without changing 
+//	the relative order of the remaining characters. (eg, "ace" is a subsequence of "abcde" while "aec" is not). A common subsequence of two 
+//	strings is a subsequence that is common to both strings.
+
+//	Question 11 - Given a singly linked list, determine if it is a palindrome.
+
+
